@@ -5,7 +5,13 @@ const app = express();
 const port = process.env.PORT || 3000;
 const path = require("path");
 
+const cors= require("cors")
+
+
+app.use(cors());
 // Define fonts for pdfmake
+
+
 
 const fonts = {
   OpenSans: {
