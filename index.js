@@ -3,20 +3,21 @@ const PdfPrinter = require("pdfmake");
 const { generateCompactUniqueRef } = require("./helper/encode");
 const app = express();
 const port = process.env.PORT || 3000;
+const path = require("path");
 
 // Define fonts for pdfmake
+
 const fonts = {
   OpenSans: {
-    normal: "fonts/OpenSans-Regular.ttf",
-    bold: "fonts/OpenSans-Medium.ttf",
-    italics: "fonts/OpenSans-Italic.ttf",
-    bolditalics: "fonts/OpenSans-MediumItalic.ttf",
+    normal: path.join(__dirname, "fonts/OpenSans-Regular.ttf"),
+    bold: path.join(__dirname, "fonts/OpenSans-Medium.ttf"),
+    italics: path.join(__dirname, "fonts/OpenSans-Italic.ttf"),
+    bolditalics: path.join(__dirname, "fonts/OpenSans-MediumItalic.ttf"),
   },
   Imprint: {
-    normal: "fonts/Imprint MT Std Regular.otf",
+    normal: path.join(__dirname, "fonts/Imprint MT Std Regular.otf"),
   },
 };
-
 const printer = new PdfPrinter(fonts);
 
 app.listen(port, () => {
