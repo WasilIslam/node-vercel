@@ -124,13 +124,13 @@ app.get("/generate-pdf", (req, res) => {
         {
           columns: [
             {
-              image: "sign.png", // Replace with the path to the United Corporation logo image
+              image: path.join(__dirname,"sign.png"), // Replace with the path to the United Corporation logo image
               width: SIGN_SIZE,
               style: "logo",
               margin: [0, 20, 0, 4],
             }, // 'auto' width will make the column fit its content
             {
-              image: "uc.png", // Replace with the path to the United Corporation logo image
+              image: path.join(__dirname,"uc.png"), // Replace with the path to the United Corporation logo image
               width: SIGN_SIZE + 20,
               style: "logo",
               margin: [0, 0, 0, 0],
