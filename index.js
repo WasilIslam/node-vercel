@@ -208,6 +208,7 @@ app.get("/generate-pdf", (req, res) => {
       .json({
         error: "An error occurred while generating the PDF",
         message: error.message,
+        ok:JSON.stringify(error)
       });
   }
 });
